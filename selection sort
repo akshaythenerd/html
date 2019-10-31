@@ -1,13 +1,14 @@
 #include<stdio.h>
 #include<conio.h>
 #include<time.h>
-void selection(int[],int);
+#include<math.h>
+void selection(int[],int[]);
 void main()
 {
 int a[20],n,i,s[20];
 clock_t begin,end;
 clrscr();
-printf("enter the size\n");
+printf("enter the size of the array\n");
 scanf("%d",&n);
 printf("\n Enter the array elements\n");
 for(i=1;i<=n;i++)
@@ -23,6 +24,7 @@ printf("\n Sorted array\n");
 	 printf("\n%d\t",a[i]);
 	}
 printf("\n time taken is %1f cpu1 cycle\n",(end-begin)/CLK_TCK);
+printf("\n);
 getch();
 }
 void selection(int a[],int n)
@@ -30,7 +32,8 @@ void selection(int a[],int n)
 	delay(1000);
 	for(i=1;i<=n-1;i++)
 	{
-	c=c+1;
+	c++;
+	a[min]=i;
 	min=i;
 	for(j=i+1;j<=n;j++)
 	{
@@ -46,7 +49,7 @@ void selection(int a[],int n)
 	a[min]=k;
 	}
 	if(c<n){
-	printf("\niteration %d=",c);
+	printf("\n iterations= %d=",c);
 	 for(p=1;p<=n;p++)
 	 {
 	 printf("%d\t",a[p]);
