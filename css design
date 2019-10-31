@@ -8,9 +8,9 @@ External.css
   }
 tr.titleS1
   {
-     font-size:25pt;
+     font-size:30pt;
      font-weight:bold;
-     background-color:blue;
+     background-color:powderblue;
      color:yellow;
   }
 tr.titleS2
@@ -27,6 +27,13 @@ tr.titleS3
      background-color:blue;
      color:yellow;
   }
+tr.titleS4
+  {
+      font-size:18pt;
+    border-style:solid ;
+     background-color:yellow;
+     color:yellow;
+  }
 caption
   {
      font-size:25pt;
@@ -39,7 +46,7 @@ tr.ttitle
   }
 p.mar
   {
-     left-margin:1.5in;
+     left-margin:3.5in;
   }
 span
   {
