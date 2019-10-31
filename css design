@@ -1,0 +1,47 @@
+External.css
+  table.tab
+   {
+      font-size:20pt;
+      border-color:Black;
+      border-style:solid;
+      border-width:thick;
+  }
+tr.titleS1
+  {
+     font-size:25pt;
+     font-weight:bold;
+     background-color:blue;
+     color:yellow;
+  }
+tr.titleS2
+  {
+      font-size:20pt;
+     font-weight:bold;
+     background-color:blue;
+     color:yellow;
+  }
+tr.titleS3
+  {
+      font-size:18pt;
+     font-weight:bold;
+     background-color:blue;
+     color:yellow;
+  }
+caption
+  {
+     font-size:25pt;
+     font-weight:bold;
+  }
+tr.ttitle
+  {
+     background-color:red;
+     color:white;
+  }
+p.mar
+  {
+     left-margin:1.5in;
+  }
+span
+  {
+     color:red;
+  }     
