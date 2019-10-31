@@ -1,0 +1,41 @@
+include<conio.h>
+#include<time.h>
+int gcdr(int,int);
+int gcdi(int,int);
+void main()
+{
+int m,n,r;
+clock_t begin,end;
+clrscr();
+printf("Enter m & n \n");
+scanf("%d%d",&m,&n);
+printf("Recurssive method\n");
+r=gcdr(m,n);
+printf("GCD of %d and %d = %d",m,n,r);
+printf("\n------------------\n");
+printf("Iteration method\n");
+r=gcdi(m,n);
+printf("GCD of %d and %d = %d",m,n,r);
+getch();
+}
+
+int gcdr(int m,int n)
+{
+if(n==0)
+{
+return m;
+}
+return gcdr(n,m%n);
+}
+
+int gcdi(int m,int n)
+{
+while(m!=n)
+{
+if(m>n)
+m=m-n;
+else
+n=n-m;
+}
+return m;
+}
