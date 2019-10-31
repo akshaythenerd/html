@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
 #include<time.h>
-void insort(int[],int);
+#include<math.h>
+void insort(int[],int[]);
 void main()
 {
 int n,arr[20],i;
@@ -9,7 +10,7 @@ clock_t begin,end;
 clrscr();
 printf("enter the size\n");
 scanf("%d",&n);
-printf("Enter array elemnets\n");
+printf("Enter the array elemnets\n");
 for(i=0;i<n;i++)
 {
 scanf("%d",&arr[i]);
@@ -18,14 +19,14 @@ begin=clock();
 insort(arr,n);
 end=clock();
 //printf("%1f %1f",begin,end);
-printf("\n cpu time %1f",(end-begin)/CLK_TCK);
+printf("\n cpu time cycles %1f",(end-begin)/CLK_TCK);
 getch();
 }
 
 void insort(int arr[],int n)
 {
 int i,j,k,s;
-delay(2000);
+delay(200);
 for(i=1;i<n;i++)
 {
 k=arr[i];
@@ -33,18 +34,18 @@ j=i-1;
 while(j>=0 && arr[j]>k)
 {
 arr[j+1]=arr[j];
-j=j-1;
+j-=1;
 }
 arr[j+1]=k;
 printf("\n pass : %d\n",i);
 for(s=0;s<n;s++)
 {
-printf("%d",arr[s]);
+printf("%d \n",arr[s]);
 }
 }
-printf("\n sorted elemnets are\n");
+printf("\n sorted elements are\n");
 for(i=0;i<n;i++)
 {
-printf("%d",arr[i]);
+printf("%d\t",arr[i]);
 }
 }
