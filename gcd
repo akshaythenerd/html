@@ -1,5 +1,6 @@
 include<conio.h>
 #include<time.h>
+#include<stdio.h>
 int gcdr(int,int);
 int gcdi(int,int);
 void main()
@@ -9,11 +10,12 @@ clock_t begin,end;
 clrscr();
 printf("Enter m & n \n");
 scanf("%d%d",&m,&n);
-printf("Recurssive method\n");
+printf("Recursive method\n");
 r=gcdr(m,n);
 printf("GCD of %d and %d = %d",m,n,r);
-printf("\n------------------\n");
-printf("Iteration method\n");
+printf("\n");
+printf("\n");
+printf("Iterative method\n");
 r=gcdi(m,n);
 printf("GCD of %d and %d = %d",m,n,r);
 getch();
