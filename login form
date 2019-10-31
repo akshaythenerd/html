@@ -1,0 +1,38 @@
+namespace register
+{
+    public partial class Form1 : Form
+    {
+        Form2 f2 = new Form2();
+        Form3 f3 = new Form3();
+        SqlConnection con1;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            f2.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != " " && textBox2.Text != " ")
+            {
+                con1.Open();
+                SqlCommand cmd = new SqlCommand("select userid,passwd,cpasswd from login where userid='" + textBox1.Text + "' and passwd='" + textBox2.Text + "'", con1);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                if (da.Fill(dt) > 0)
+                {
+                    f3.Show();
+                    MessageBox.Show("login successfull");
+                    con1.Close();
+                    this.Hide();
+                }
+            
+            else 
+            
+                MessageBox.Show("login failed");
+        }
