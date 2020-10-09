@@ -1,0 +1,67 @@
+NewFlile.html
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;form method=&quot;get&quot; action=&quot;checkId&quot;&gt;
+CustomerId:&lt;input type =&quot;text&quot; name=&quot;id&quot;/&gt;&lt;br&gt;&lt;br&gt;
+CurrentReading:&lt;input type=&quot;text&quot; name=&quot;t1&quot;/&gt;&lt;br&gt;&lt;br&gt;
+PreviousReading:&lt;input type=&quot;text&quot; name=&quot;t2&quot;/&gt;&lt;br&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+bill.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class bill extends HttpServlet {
+public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException,
+IOException {
+
+res.setContentType(&quot;text/html&quot;);
+PrintWriter out=res.getWriter();
+String str1=req.getParameter(&quot;t1&quot;);
+int CurrentReading =Integer.parseInt(str1);
+int PreviousReading=Integer.parseInt (req.getParameter(&quot;t2&quot;));
+int noofunits = CurrentReading - PreviousReading ;
+double amountpayable = noofunits * 8.75;
+out.println(&quot;PreviousReading:&quot;+PreviousReading);
+out.println(&quot;CurrentReading:&quot;+CurrentReading);
+out.println(&quot;BillAmountRs:&quot;+amountpayable);
+}
+
+}
+checked.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class checkId extends HttpServlet {
+
+public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException,
+IOException {
+res.setContentType(&quot;text/html&quot;);
+PrintWriter out=res.getWriter();
+String cid =req.getParameter(&quot;id&quot;);
+if(cid.equals(&quot;002&quot;))
+{
+out.println(&quot;&lt;html&gt;&lt;body&gt;&lt;center&gt;&lt;font size=4&gt;&quot;);
+out.println(&quot;&lt;u&gt; Follwing are your bill particulars&lt;/u&gt;&lt;br&gt;&quot;);
+;
+}
+else
+{
+RequestDispatcher rd=req.getRequestDispatcher(&quot;NewFile.html&quot;);
+rd.forward(req, res);
+}
+}
+}
